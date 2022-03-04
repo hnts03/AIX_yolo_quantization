@@ -224,10 +224,79 @@ float *network_predict_quantized(network net, float *input)
     return net.layers[i].output;
 }
 
+// This function contaminates original weights.
+// Have to additional work for contaminating problem.
+void do_normalization(layer *l, char *method){
+    // get copy of  weights
+    printf("check 2\n");
+    
+    size_t const weights_size = l->size*l->size*l->c*l->n;
+    size_t const filter_size = l->size*l->size*l->c;
+    float copied_weights[weights_size];
+    
+    int fil, i;
+    // memcpy(copied_weights, l->weights, sizeof(l->weights));
+    printf("check 3\n");
+    for (fil = 0; fil < l->n; ++fil) {
+        for (i = 0; i < filter_size; ++i) {
+            copied_weights[fil*filter_size + i] = l->weights[fil*filter_size + i];
+        }
+    }
+    printf("*** This is preview for weights ***\n");
+    for (i=0; i<10; i++){
+        printf("weight[%d] : [%f]\n", i, copied_weights[i]);
+    }
+
+    // if method is minmax
+    // 22.03.04 below minmax working no distinguish of filter. Just minmax to whole weights.
+    if (strcmp(method, "minmax") == 0){
+        
+        float norm_weight;
+        int j;
+
+        
+        
+        // per filter
+        for (fil = 0; fil < l->n; ++fil) {
+            float max = 0;
+            float min = 0;
+            // get min, max of weights
+            for (i = 0; i < filter_size; ++i) {
+                if (max < copied_weights[fil*filter_size + i]) max = copied_weights[fil*filter_size + i];
+                if (min > copied_weights[fil*filter_size + i]) min = copied_weights[fil*filter_size + i];
+            }
+        
+            printf("min, max : %f %f\n", min, max);
+
+            // do min-max normalization
+            for (i = 0; i < filter_size; ++i) {
+                norm_weight = (copied_weights[fil*filter_size + i] - min) / (max - min);
+                copied_weights[fil*filter_size + i] = norm_weight;
+            }
+            
+        }
+
+        printf("*** This is preview for normalized weights ***\n");
+        for (i=0; i<10; i++){
+            printf("weight[%d] : [%f]\n", i, copied_weights[i]);
+        }
+
+        // re-copy to origin weight
+        // memcpy(l->weights, copied_weights, sizeof(l->weights));
+        for (fil = 0; fil < l->n; ++fil) {
+            for (i = 0; i < filter_size; ++i) {
+                l->weights[fil*filter_size + i] = copied_weights[fil*filter_size + i];
+            }
+        }
+    }
+    
+}
+
 /* Quantization-related */
 
 void do_quantization(network net) {
     int counter = 0;
+    char* method = "minmax";
 
     int j;
     for (j = 0; j < net.n; ++j) {
@@ -239,9 +308,16 @@ void do_quantization(network net) {
         */
 
         printf("\n");
+        
         if (l->type == CONVOLUTIONAL) { // Quantize conv layer only
             size_t const weights_size = l->size*l->size*l->c*l->n;
             size_t const filter_size = l->size*l->size*l->c;
+
+            // below codes are for debugging
+            // printf("%d\n", sizeof(l->weights)*weights_size);
+            // printf("%d\n", sizeof(l->weights));
+            // printf("%d\n", sizeof(l->weights[0]));
+            // printf("%d\n", sizeof(float));
 
             int i, fil;
 
@@ -253,14 +329,27 @@ void do_quantization(network net) {
             // l->input_quant_multiplier = floor(l->input_quant_multiplier*pow(2,12))/pow(2,12);
             ++counter;
 
+            printf("check 1\n");
             // Weight Quantization
-            l->weights_quant_multiplier = 32; // Arbitrarily set to 32; you should devise your own method to calculate the weight multiplier
+            do_normalization(l, method);
             for (fil = 0; fil < l->n; ++fil) {
                 for (i = 0; i < filter_size; ++i) {
-                    float w = l->weights[fil*filter_size + i] * l->weights_quant_multiplier; // Scale
+                    float w = (l->weights[fil*filter_size + i] - 0.5) * 255; // Scale
                     l->weights_int8[fil*filter_size + i] = max_abs(w, MAX_VAL_8); // Clip
                 }
             }
+
+
+            // Below annotation is a pure-skeleton code.
+            
+            // l->weights_quant_multiplier = 32; // Arbitrarily set to 32; you should devise your own method to calculate the weight multiplier
+            // for (fil = 0; fil < l->n; ++fil) {
+            //     for (i = 0; i < filter_size; ++i) {
+            //         float w = l->weights[fil*filter_size + i] * l->weights_quant_multiplier; // Scale
+            //         l->weights_int8[fil*filter_size + i] = max_abs(w, MAX_VAL_8); // Clip
+            //     }
+            // }
+            
 
             // Bias Quantization
             float biases_multiplier = (l->weights_quant_multiplier * l->input_quant_multiplier);
@@ -291,12 +380,23 @@ void save_quantized_model(network net) {
             char weightfile[30];
             char biasfile[30];
             char scalefile[30];
+            char origin_weightfile[30];
 
             sprintf(weightfile, "weights/CONV%d_W.txt", j);
             sprintf(biasfile, "weights/CONV%d_B.txt", j);
             sprintf(scalefile, "weights/CONV%d_S.txt", j);
+            sprintf(origin_weightfile, "weights/CONV%d_ORIGIN.txt", j);
 
             int k;
+
+            FILE *fp_ori = fopen(origin_weightfile, "w");
+            for (k = 0; k < weights_size; k++){
+                // float origin_weight = k < weight_size ? l->weights[k] : 0;
+                fprintf(fp_ori, "%f\n", l->weights[k]);
+            }
+            fclose(fp_ori);
+            
+            
 
             FILE *fp_w = fopen(weightfile, "w");
             for (k = 0; k < weights_size; k = k + 4) {
