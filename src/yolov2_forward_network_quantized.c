@@ -224,8 +224,36 @@ float *network_predict_quantized(network net, float *input)
     return net.layers[i].output;
 }
 
+//mean function for z-norm
+float _mean(float *weights, int filter_num, int weight_size){
+    float sum = 0;
+    float mean;
+    for (int i = 0; i < weight_size; i++){
+        sum += weights[filter_num * weight_size + i];
+    }
+    mean = sum / weight_size;
+    return mean;
+}
+
+// variance function for z-norm
+float _variance(float *weights, int filter_num, float mean, int weight_size){
+    float deviation_square_sum = 0;
+    float variance;
+    for (int i=0; i < weight_size; i++){
+        deviation_square_sum += pow(weights[filter_num * weight_size + i] - mean, 2);
+    }
+    variance = deviation_square_sum / weight_size;
+    return variance;
+}
+
+// standard deviation function for z-norm
+float _std_deviation(float variance){
+    float std_deviation = sqrt(variance);
+    return std_deviation;
+}
+
 // This function contaminates original weights.
-// Have to additional work for contaminating problem.
+// Have to additional work for contamination problem.
 void do_normalization(layer *l, char *method){
     // get copy of  weights
     printf("check 2\n");
@@ -242,13 +270,14 @@ void do_normalization(layer *l, char *method){
             copied_weights[fil*filter_size + i] = l->weights[fil*filter_size + i];
         }
     }
-    printf("*** This is preview for weights ***\n");
-    for (i=0; i<10; i++){
-        printf("weight[%d] : [%f]\n", i, copied_weights[i]);
-    }
+    // debug handling part
+    // printf("*** This is preview for weights ***\n");
+    // for (i=0; i<10; i++){
+    //     printf("weight[%d] : [%f]\n", i, copied_weights[i]);
+    // }
 
     // if method is minmax
-    // 22.03.04 below minmax working no distinguish of filter. Just minmax to whole weights.
+    // 22.03.04 below minmax working distinguish of filter.
     if (strcmp(method, "minmax") == 0){
         
         float norm_weight;
@@ -276,10 +305,11 @@ void do_normalization(layer *l, char *method){
             
         }
 
-        printf("*** This is preview for normalized weights ***\n");
-        for (i=0; i<10; i++){
-            printf("weight[%d] : [%f]\n", i, copied_weights[i]);
-        }
+        // debug handling part
+        // printf("*** This is preview for normalized weights ***\n");
+        // for (i=0; i<10; i++){
+        //     printf("weight[%d] : [%f]\n", i, copied_weights[i]);
+        // }
 
         // re-copy to origin weight
         // memcpy(l->weights, copied_weights, sizeof(l->weights));
@@ -290,13 +320,39 @@ void do_normalization(layer *l, char *method){
         }
     }
     
+    // if method is znorm
+    // 22.03.05 below code is about znorm 
+    if (strcmp(method, "znorm") == 0){
+
+        // per filter
+        for (fil = 0; fil < l->n; ++fil) {
+            // get mean, variance, std_deviation
+            float mean = _mean(copied_weights, fil, filter_size);
+            float variance = _variance(copied_weights, fil, mean, filter_size);
+            float std_deviation = _std_deviation(variance);            
+        
+            printf("[filter num : %d][mean : %f] [variance : %f] [standard deviation : %f]\n", fil, mean, variance, std_deviation);
+
+            // do z-normalization
+            for (i = 0; i < filter_size; ++i) {
+                float norm_weight = (copied_weights[fil*filter_size + i] - mean) / std_deviation;
+                copied_weights[fil*filter_size + i] = norm_weight;
+            }
+            
+        }
+
+        // re-copy to origin weight
+        for (i = 0; i < weights_size; i++){
+            l->weights[i] = copied_weights[i];
+        }
+    }
 }
 
 /* Quantization-related */
 
 void do_quantization(network net) {
     int counter = 0;
-    char* method = "minmax";
+    char* method = "znorm"; // minmax, znorm
 
     int j;
     for (j = 0; j < net.n; ++j) {
@@ -334,7 +390,7 @@ void do_quantization(network net) {
             do_normalization(l, method);
             for (fil = 0; fil < l->n; ++fil) {
                 for (i = 0; i < filter_size; ++i) {
-                    float w = (l->weights[fil*filter_size + i] - 0.5) * 255; // Scale
+                    float w = (l->weights[fil*filter_size + i] - 0.5) * 127; // Scale
                     l->weights_int8[fil*filter_size + i] = max_abs(w, MAX_VAL_8); // Clip
                 }
             }
