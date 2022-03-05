@@ -1,150 +1,150 @@
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10000.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10001.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10002.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10003.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10004.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10005.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10006.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10007.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10008.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10009.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10010.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10011.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10012.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10013.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10014.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10015.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10016.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10017.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10018.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10019.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10020.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10021.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10022.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10023.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10024.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10025.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10026.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10027.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10028.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10029.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10031.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10032.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10033.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10034.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10035.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10036.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10037.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10038.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10039.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10040.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10041.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10042.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10043.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10044.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10045.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10046.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10047.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10048.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10049.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_close_10050.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10001.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10002.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10003.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10004.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10005.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10006.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10007.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10008.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10009.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10010.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10011.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10012.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10013.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10014.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10015.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10016.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10017.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10018.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10019.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10020.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10021.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10022.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10023.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10024.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10025.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10026.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10027.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10028.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10029.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10030.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10031.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10032.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10033.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10034.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10035.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10036.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10037.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10038.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10039.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10040.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10041.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10042.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10043.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10044.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10045.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10046.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10047.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10048.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10049.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_color_10050.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10000.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10001.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10002.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10003.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10004.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10005.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10006.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10007.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10008.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10009.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10010.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10011.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10012.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10013.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10014.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10015.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10016.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10017.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10018.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10019.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10020.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10021.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10022.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10023.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10024.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10025.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10026.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10027.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10028.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10029.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10030.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10031.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10032.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10033.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10034.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10035.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10036.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10037.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10038.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10039.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10040.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10041.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10042.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10043.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10044.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10045.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10046.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10047.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10048.jpg
-/Users/minsikky/OneDrive - SNU/Documents/SNU/Courses/2021-W/yolo2_light/bin/dataset/CAPP_testset_long_10049.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10000.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10001.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10002.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10003.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10004.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10005.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10006.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10007.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10008.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10009.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10010.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10011.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10012.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10013.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10014.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10015.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10016.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10017.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10018.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10019.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10020.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10021.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10022.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10023.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10024.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10025.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10026.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10027.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10028.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10029.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10031.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10032.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10033.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10034.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10035.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10036.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10037.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10038.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10039.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10040.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10041.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10042.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10043.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10044.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10045.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10046.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10047.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10048.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10049.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_close_10050.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10001.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10002.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10003.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10004.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10005.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10006.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10007.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10008.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10009.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10010.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10011.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10012.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10013.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10014.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10015.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10016.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10017.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10018.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10019.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10020.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10021.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10022.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10023.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10024.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10025.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10026.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10027.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10028.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10029.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10030.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10031.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10032.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10033.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10034.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10035.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10036.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10037.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10038.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10039.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10040.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10041.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10042.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10043.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10044.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10045.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10046.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10047.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10048.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10049.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_color_10050.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10000.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10001.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10002.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10003.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10004.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10005.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10006.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10007.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10008.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10009.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10010.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10011.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10012.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10013.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10014.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10015.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10016.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10017.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10018.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10019.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10020.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10021.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10022.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10023.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10024.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10025.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10026.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10027.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10028.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10029.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10030.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10031.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10032.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10033.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10034.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10035.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10036.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10037.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10038.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10039.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10040.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10041.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10042.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10043.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10044.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10045.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10046.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10047.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10048.jpg
+/Users/hanets/Desktop/AI_Hardware/skeleton/bin/dataset/CAPP_testset_long_10049.jpg
