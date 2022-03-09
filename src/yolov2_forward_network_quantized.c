@@ -1,4 +1,5 @@
 #include "additionally.h"    // some definitions from: im2col.h, blas.h, list.h, utils.h, activations.h, tree.h, layer.h, network.h
+#include <stdlib.h>
 // softmax_layer.h, reorg_layer.h, route_layer.h, region_layer.h, maxpool_layer.h, convolutional_layer.h
 
 #define GEMMCONV
@@ -9,6 +10,8 @@
 #define MAX_VAL_8 (256/2 - 1)    // 7-bit (1-bit sign)
 #define MAX_VAL_16 (256*256/2 - 1)    // 15-bit (1-bit sign)
 #define MAX_VAL_32 (256*256*256*256/2 - 1) // 31-bit (1-bit sign)
+
+float scalefactor;
 
 int max_abs(int src, int max_val)
 {
@@ -23,7 +26,7 @@ short int max_abs_short(short int src, short int max_val)
 }
 
 // im2col.c
-int8_t im2col_get_pixel_int8(int8_t *im, int height, int width, int channels,
+int8_t im2col_get_pixel_int8(int8_t* im, int height, int width, int channels,
     int row, int col, int channel, int pad)
 {
     row -= pad;
@@ -31,7 +34,7 @@ int8_t im2col_get_pixel_int8(int8_t *im, int height, int width, int channels,
 
     if (row < 0 || col < 0 ||
         row >= height || col >= width) return 0;
-    return im[col + width*(row + height*channel)];
+    return im[col + width * (row + height * channel)];
 }
 
 // im2col.c
@@ -63,22 +66,22 @@ void im2col_cpu_int8(int8_t* data_im,
 }
 
 void gemm_nn_int8_int16(int M, int N, int K, int8_t ALPHA,
-    int8_t *A, int lda,
-    int8_t *B, int ldb,
-    int16_t *C, int ldc)
+    int8_t* A, int lda,
+    int8_t* B, int ldb,
+    int16_t* C, int ldc)
 {
-    int32_t *c_tmp = calloc(N, sizeof(int32_t));
+    int32_t* c_tmp = calloc(N, sizeof(int32_t));
     int i, j, k;
     for (i = 0; i < M; ++i) {
         for (k = 0; k < K; ++k) {
-            register int16_t A_PART = ALPHA*A[i*lda + k];
+            register int16_t A_PART = ALPHA * A[i * lda + k];
             //#pragma simd parallel for
             for (j = 0; j < N; ++j) {
-                c_tmp[j] += A_PART*B[k*ldb + j];
+                c_tmp[j] += A_PART * B[k * ldb + j];
             }
         }
         for (j = 0; j < N; ++j) {
-            C[i*ldc + j] += max_abs(c_tmp[j], MAX_VAL_16);
+            C[i * ldc + j] += max_abs(c_tmp[j], MAX_VAL_16);
             c_tmp[j] = 0;
         }
     }
@@ -86,27 +89,54 @@ void gemm_nn_int8_int16(int M, int N, int K, int8_t ALPHA,
 }
 
 void gemm_nn_int8_int32(int M, int N, int K, int8_t ALPHA,
-    int8_t *A, int lda,
-    int8_t *B, int ldb,
-    int32_t *C, int ldc)
+    int8_t* A, int lda,
+    int8_t* B, int ldb,
+    int32_t* C, int ldc)
 {
-    int32_t *c_tmp = calloc(N, sizeof(int32_t));
+    int32_t* c_tmp = calloc(N, sizeof(int32_t));
     int i, j, k;
     for (i = 0; i < M; ++i) {
         for (k = 0; k < K; ++k) {
-            register int16_t A_PART = ALPHA*A[i*lda + k];
+            register int16_t A_PART = ALPHA * A[i * lda + k];
             //#pragma simd parallel for
             for (j = 0; j < N; ++j) {
-                c_tmp[j] += A_PART*B[k*ldb + j];
+                c_tmp[j] += A_PART * B[k * ldb + j];
             }
         }
         for (j = 0; j < N; ++j) {
-            C[i*ldc + j] += max_abs(c_tmp[j], MAX_VAL_32);
+            C[i * ldc + j] += max_abs(c_tmp[j], MAX_VAL_32);
             c_tmp[j] = 0;
         }
     }
     free(c_tmp);
 }
+
+int compare(void* first, void* second)
+{
+    if (*(float*)first > *(float*)second)
+        return 1;
+    else if (*(float*)first < *(float*)second)
+        return -1;
+    else
+        return 0;
+}
+
+void sortarr(float arr[], int count)
+{
+    qsort(arr, count, sizeof(float), compare);
+
+}
+
+
+float getmulti(float arr[], int cut, int count) {
+    float minmax = arr[count - cut - 1] - arr[cut];
+    printf("minmax:%f \n", minmax);
+    float fmulti = scalefactor / minmax;
+    float multi = floor(fmulti);
+
+    return multi;
+}
+
 
 void forward_convolutional_layer_q(layer l, network_state state)
 {
@@ -114,12 +144,12 @@ void forward_convolutional_layer_q(layer l, network_state state)
     int out_h = (l.h + 2 * l.pad - l.size) / l.stride + 1;    // output_height=input_height for stride=1 and pad=1
     int out_w = (l.w + 2 * l.pad - l.size) / l.stride + 1;    // output_width=input_width for stride=1 and pad=1
     int i, j;
-    int const out_size = out_h*out_w;
+    int const out_size = out_h * out_w;
 
     typedef int16_t conv_t;    // l.output
-    conv_t *output_q = calloc(l.outputs, sizeof(conv_t));
+    conv_t* output_q = calloc(l.outputs, sizeof(conv_t));
 
-    state.input_int8 = (int8_t *)calloc(l.inputs, sizeof(int));
+    state.input_int8 = (int8_t*)calloc(l.inputs, sizeof(int));
     int z;
     for (z = 0; z < l.inputs; ++z) {
         int16_t src = state.input[z] * l.input_quant_multiplier;
@@ -128,18 +158,18 @@ void forward_convolutional_layer_q(layer l, network_state state)
 
     // Convolution
     int m = l.n;
-    int k = l.size*l.size*l.c;
-    int n = out_h*out_w;
-    int8_t *a = l.weights_int8;
-    int8_t *b = (int8_t *)state.workspace;
-    conv_t *c = output_q;    // int16_t
+    int k = l.size * l.size * l.c;
+    int n = out_h * out_w;
+    int8_t* a = l.weights_int8;
+    int8_t* b = (int8_t*)state.workspace;
+    conv_t* c = output_q;    // int16_t
 
     // Use GEMM (as part of BLAS)
     im2col_cpu_int8(state.input_int8, l.c, l.h, l.w, l.size, l.stride, l.pad, b);
     int t;    // multi-thread gemm
-    #pragma omp parallel for
+#pragma omp parallel for
     for (t = 0; t < m; ++t) {
-        gemm_nn_int8_int16(1, n, k, 1, a + t*k, k, b, n, c + t*n, n);
+        gemm_nn_int8_int16(1, n, k, 1, a + t * k, k, b, n, c + t * n, n);
     }
     free(state.input_int8);
 
@@ -147,13 +177,13 @@ void forward_convolutional_layer_q(layer l, network_state state)
     int fil;
     for (fil = 0; fil < l.n; ++fil) {
         for (j = 0; j < out_size; ++j) {
-            output_q[fil*out_size + j] = output_q[fil*out_size + j] + l.biases_quant[fil];
+            output_q[fil * out_size + j] = output_q[fil * out_size + j] + l.biases_quant[fil];
         }
     }
 
     // Activation
     if (l.activation == LEAKY) {
-        for (i = 0; i < l.n*out_size; ++i) {
+        for (i = 0; i < l.n * out_size; ++i) {
             output_q[i] = (output_q[i] > 0) ? output_q[i] : output_q[i] / 10;
         }
     }
@@ -207,7 +237,7 @@ void yolov2_forward_network_q(network net, network_state state)
 }
 
 // detect on CPU
-float *network_predict_quantized(network net, float *input)
+float* network_predict_quantized(network net, float* input)
 {
     network_state state;
     state.net = net;
@@ -224,158 +254,26 @@ float *network_predict_quantized(network net, float *input)
     return net.layers[i].output;
 }
 
-//mean function for z-norm
-float _mean(float *weights, int filter_num, int weight_size){
-    float sum = 0;
-    float mean;
-    for (int i = 0; i < weight_size; i++){
-        sum += weights[filter_num * weight_size + i];
-    }
-    mean = sum / weight_size;
-    return mean;
-}
-
-// variance function for z-norm
-float _variance(float *weights, int filter_num, float mean, int weight_size){
-    float deviation_square_sum = 0;
-    float variance;
-    for (int i=0; i < weight_size; i++){
-        deviation_square_sum += pow(weights[filter_num * weight_size + i] - mean, 2);
-    }
-    variance = deviation_square_sum / weight_size;
-    return variance;
-}
-
-// standard deviation function for z-norm
-float _std_deviation(float variance){
-    float std_deviation = sqrt(variance);
-    return std_deviation;
-}
-
-// This function contaminates original weights.
-// Have to additional work for contamination problem.
-void do_normalization(layer *l, char *method){
-    // get copy of  weights
-    printf("check 2\n");
-    
-    size_t const weights_size = l->size*l->size*l->c*l->n;
-    size_t const filter_size = l->size*l->size*l->c;
-    float copied_weights[weights_size];
-    
-    int fil, i;
-    // memcpy(copied_weights, l->weights, sizeof(l->weights));
-    printf("check 3\n");
-    for (fil = 0; fil < l->n; ++fil) {
-        for (i = 0; i < filter_size; ++i) {
-            copied_weights[fil*filter_size + i] = l->weights[fil*filter_size + i];
-        }
-    }
-    // debug handling part
-    // printf("*** This is preview for weights ***\n");
-    // for (i=0; i<10; i++){
-    //     printf("weight[%d] : [%f]\n", i, copied_weights[i]);
-    // }
-
-    // if method is minmax
-    // 22.03.04 below minmax working distinguish of filter.
-    if (strcmp(method, "minmax") == 0){
-        
-        float norm_weight;
-        int j;
-
-        
-        
-        // per filter
-        for (fil = 0; fil < l->n; ++fil) {
-            float max = 0;
-            float min = 0;
-            // get min, max of weights
-            for (i = 0; i < filter_size; ++i) {
-                if (max < copied_weights[fil*filter_size + i]) max = copied_weights[fil*filter_size + i];
-                if (min > copied_weights[fil*filter_size + i]) min = copied_weights[fil*filter_size + i];
-            }
-        
-            printf("min, max : %f %f\n", min, max);
-
-            // do min-max normalization
-            for (i = 0; i < filter_size; ++i) {
-                norm_weight = (copied_weights[fil*filter_size + i] - min) / (max - min);
-                copied_weights[fil*filter_size + i] = norm_weight;
-            }
-            
-        }
-
-        // debug handling part
-        // printf("*** This is preview for normalized weights ***\n");
-        // for (i=0; i<10; i++){
-        //     printf("weight[%d] : [%f]\n", i, copied_weights[i]);
-        // }
-
-        // re-copy to origin weight
-        // memcpy(l->weights, copied_weights, sizeof(l->weights));
-        for (fil = 0; fil < l->n; ++fil) {
-            for (i = 0; i < filter_size; ++i) {
-                l->weights[fil*filter_size + i] = copied_weights[fil*filter_size + i];
-            }
-        }
-    }
-    
-    // if method is znorm
-    // 22.03.05 below code is about znorm 
-    if (strcmp(method, "znorm") == 0){
-
-        // per filter
-        for (fil = 0; fil < l->n; ++fil) {
-            // get mean, variance, std_deviation
-            float mean = _mean(copied_weights, fil, filter_size);
-            float variance = _variance(copied_weights, fil, mean, filter_size);
-            float std_deviation = _std_deviation(variance);            
-        
-            printf("[filter num : %d][mean : %f] [variance : %f] [standard deviation : %f]\n", fil, mean, variance, std_deviation);
-
-            // do z-normalization
-            for (i = 0; i < filter_size; ++i) {
-                float norm_weight = (copied_weights[fil*filter_size + i] - mean) / std_deviation;
-                copied_weights[fil*filter_size + i] = norm_weight;
-            }
-            
-        }
-
-        // re-copy to origin weight
-        for (i = 0; i < weights_size; i++){
-            l->weights[i] = copied_weights[i];
-        }
-    }
-}
-
 /* Quantization-related */
 
 void do_quantization(network net) {
     int counter = 0;
-    char* method = "znorm"; // minmax, znorm
 
     int j;
     for (j = 0; j < net.n; ++j) {
-        layer *l = &net.layers[j];
+        layer* l = &net.layers[j];
 
         /*
-        TODO: implement quantization 
+        TODO: implement quantization
         The implementation given below is a naive version of per-network quantization; implement your own quantization that minimizes the mAP degradation
         */
 
         printf("\n");
-        
         if (l->type == CONVOLUTIONAL) { // Quantize conv layer only
-            size_t const weights_size = l->size*l->size*l->c*l->n;
-            size_t const filter_size = l->size*l->size*l->c;
+            size_t const weights_size = l->size * l->size * l->c * l->n;
+            size_t const filter_size = l->size * l->size * l->c;
 
-            // below codes are for debugging
-            // printf("%d\n", sizeof(l->weights)*weights_size);
-            // printf("%d\n", sizeof(l->weights));
-            // printf("%d\n", sizeof(l->weights[0]));
-            // printf("%d\n", sizeof(float));
-
-            int i, fil;
+            int i, fil, count;
 
             // Input Scaling
             if (counter >= net.input_calibration_size) {
@@ -385,27 +283,37 @@ void do_quantization(network net) {
             // l->input_quant_multiplier = floor(l->input_quant_multiplier*pow(2,12))/pow(2,12);
             ++counter;
 
-            printf("check 1\n");
+            float* arr = malloc(sizeof(float) * weights_size);
+
+            for (int ka = 0; ka < weights_size; ka++)
+            {
+                arr[ka] = l->weights[ka];
+            }
+            scalefactor = 91.3;
+            count = weights_size;
+            int cut = 0;
+            sortarr(arr, count);
+            l->weights_quant_multiplier = getmulti(arr, cut, count);
+            if (counter == 1) {
+                l->weights_quant_multiplier = l->weights_quant_multiplier * 256.032 / scalefactor;
+            }
+
+
+
+
+
             // Weight Quantization
-            do_normalization(l, method);
+            //l->weights_quant_multiplier = 32; // Arbitrarily set to 32; you should devise your own method to calculate the weight multiplier
             for (fil = 0; fil < l->n; ++fil) {
                 for (i = 0; i < filter_size; ++i) {
-                    float w = (l->weights[fil*filter_size + i] - 0.5) * 127; // Scale
-                    l->weights_int8[fil*filter_size + i] = max_abs(w, MAX_VAL_8); // Clip
+                    float w = l->weights[fil * filter_size + i] * l->weights_quant_multiplier; // Scale
+                    l->weights_int8[fil * filter_size + i] = max_abs(w, MAX_VAL_8); // Clip
                 }
             }
 
 
-            // Below annotation is a pure-skeleton code.
-            
-            // l->weights_quant_multiplier = 32; // Arbitrarily set to 32; you should devise your own method to calculate the weight multiplier
-            // for (fil = 0; fil < l->n; ++fil) {
-            //     for (i = 0; i < filter_size; ++i) {
-            //         float w = l->weights[fil*filter_size + i] * l->weights_quant_multiplier; // Scale
-            //         l->weights_int8[fil*filter_size + i] = max_abs(w, MAX_VAL_8); // Clip
-            //     }
-            // }
-            
+
+
 
             // Bias Quantization
             float biases_multiplier = (l->weights_quant_multiplier * l->input_quant_multiplier);
@@ -426,53 +334,42 @@ void do_quantization(network net) {
 void save_quantized_model(network net) {
     int j;
     for (j = 0; j < net.n; ++j) {
-        layer *l = &net.layers[j];
+        layer* l = &net.layers[j];
         if (l->type == CONVOLUTIONAL) {
-            size_t const weights_size = l->size*l->size*l->c*l->n;
-            size_t const filter_size = l->size*l->size*l->c;
+            size_t const weights_size = l->size * l->size * l->c * l->n;
+            size_t const filter_size = l->size * l->size * l->c;
 
             printf(" Saving quantized weights, bias, and scale for CONV%d \n", j);
 
             char weightfile[30];
             char biasfile[30];
             char scalefile[30];
-            char origin_weightfile[30];
 
             sprintf(weightfile, "weights/CONV%d_W.txt", j);
             sprintf(biasfile, "weights/CONV%d_B.txt", j);
             sprintf(scalefile, "weights/CONV%d_S.txt", j);
-            sprintf(origin_weightfile, "weights/CONV%d_ORIGIN.txt", j);
 
             int k;
 
-            FILE *fp_ori = fopen(origin_weightfile, "w");
-            for (k = 0; k < weights_size; k++){
-                // float origin_weight = k < weight_size ? l->weights[k] : 0;
-                fprintf(fp_ori, "%f\n", l->weights[k]);
-            }
-            fclose(fp_ori);
-            
-            
-
-            FILE *fp_w = fopen(weightfile, "w");
+            FILE* fp_w = fopen(weightfile, "w");
             for (k = 0; k < weights_size; k = k + 4) {
                 uint8_t first = k < weights_size ? l->weights_int8[k] : 0;
-                uint8_t second = k+1 < weights_size ? l->weights_int8[k+1] : 0;
-                uint8_t third = k+2 < weights_size ? l->weights_int8[k+2] : 0;
-                uint8_t fourth = k+3 < weights_size ? l->weights_int8[k+3] : 0;
+                uint8_t second = k + 1 < weights_size ? l->weights_int8[k + 1] : 0;
+                uint8_t third = k + 2 < weights_size ? l->weights_int8[k + 2] : 0;
+                uint8_t fourth = k + 3 < weights_size ? l->weights_int8[k + 3] : 0;
                 fprintf(fp_w, "%02x%02x%02x%02x\n", first, second, third, fourth);
             }
             fclose(fp_w);
 
-            FILE *fp_b = fopen(biasfile, "w");
+            FILE* fp_b = fopen(biasfile, "w");
             for (k = 0; k < l->n; k = k + 4) {
                 uint16_t first = k < l->n ? l->biases_quant[k] : 0;
-                uint16_t second = k+1 < l->n ? l->biases_quant[k+1] : 0;
+                uint16_t second = k + 1 < l->n ? l->biases_quant[k + 1] : 0;
                 fprintf(fp_b, "%04x%04x\n", first, second);
             }
             fclose(fp_b);
 
-            FILE *fp_s = fopen(scalefile, "w");
+            FILE* fp_s = fopen(scalefile, "w");
             fprintf(fp_s, "%f\n", l->input_quant_multiplier);
             fclose(fp_s);
         }
